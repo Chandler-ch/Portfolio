@@ -1,11 +1,360 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseHead from "../components/seitenlayout/BaseHead.astro";
+import Footer from "../components/seitenlayout/Footer.astro";
+import Header from "../components/seitenlayout/HeaderNav.astro";
+import Summary from "../components/Summary.astro";
+import Projectcard from "../components/Projectcard.astro";
+import Friendpic from "../components/Friendpic.astro";
+import Eighteight from "../components/Eighteight.astro";
+import Totd from "../components/Totd.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="splash">
+        <div class="splash-content">
+          <div class="splash-header">
+            <h2>
+              hi, i'm <span style="color: var(--accent);" id="typing"></span>
+            </h2>
+          </div>
+          <div class="splash-subheader">
+            <p>19 years old silly from germany</p>
+          </div>
+        </div>
+
+        <div class="splash-image">
+          <a href="https://www.youtube.com/watch?v=eeTuK5acfFU">
+            <img src="https://github.com/uncutified.png" alt="Lexy" />
+          </a>
+        </div>
+      </div>
+
+      <hr class="section-seperation" />
+
+      <div class="summary">
+        <div class="section-header">
+          <h2>Summary</h2>
+          <p class="section-subheader">Find out what I love and what I do</p>
+        </div>
+        <Summary />
+      </div>
+
+      <div class="projects">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p class="section-subheader">
+            Some of my projects, more can be found on my{" "}
+            <a href="https://github.com/uncutified">GitHub</a>
+          </p>
+        </div>
+        <div class="cluster">
+          <Projectcard
+            href="https://keltrix.net/"
+            img="https://keltrix.net/assets/keltrix-white.webp"
+            title="Keltrix"
+            description="Affordable server hosting"
+          />
+
+          <Projectcard
+            href="#"
+            img="https://cdn.discordapp.com/icons/1183800558629441587/f6078f12b424e96742a77acdaedbb174.webp?size=1024"
+            title="Valendria.net"
+            description="Minecraft server network (paused)"
+          />
+        </div>
+      </div>
+
+      <div class="friends">
+        <div class="section-header">
+          <h2>Friends</h2>
+          <p class="section-subheader">
+            All the cuties here, hotlink my <a href="88x31">button</a> if we're
+            friends! :3
+          </p>
+        </div>
+
+        <!-- 88x31'S -->
+
+        <div class="eighteightbar">
+          <Eighteight
+            href="https://wearr.dev/"
+            title="Wearr"
+            img="https://wearr.dev/88x31.gif"
+          />
+
+          <Eighteight
+            href="https://vendicated.dev"
+            title="a real veev"
+            img="https://vendicated.dev/assets/88x31/me.gif"
+          />
+
+          <Eighteight
+            href="https://mugman.tech"
+            title="mugman"
+            img="https://mugman.tech/88x31/me.png"
+          />
+
+          <Eighteight
+            href="https://codeberg.org/paige"
+            title="paipai"
+            img="/paige88x31.gif"
+          />
+
+          <Eighteight
+            href="https://worf.win/"
+            title="worf"
+            img="https://worf.win/images/worfwin.gif"
+          />
+
+          <Eighteight
+            href="https://elissa.moe/"
+            title="elissa bwa"
+            img="https://elissa.moe/_astro/me.CXG_6iqd.png"
+          />
+
+          <Eighteight
+            href="https://cxteneko.com"
+            title="nicky"
+            img="https://cxteneko.com/assets/images/CN8831.png"
+          />
+
+          <Eighteight
+            href="https://caitlyn.moe"
+            title="caiting my lyn"
+            img="https://caitlyn.moe/88x31.png"
+          />
+
+          <Eighteight
+            href="https://jadestone.dev/"
+            title="Jade :3"
+            img="https://jadestone.dev/88x31-de.gif"
+          />
+
+          <Eighteight
+            href="https://mayu.amy.rip/"
+            title="mayonaise"
+            img="https://mayu.amy.rip/img/88x31/mayu.png"
+          />
+        </div>
+
+        <!-- Avatars -->
+
+        <div class="friendbar">
+          <Friendpic
+            href="https://caitlyn.moe/"
+            title="Caitlyn"
+            img="https://github.com/fielstamper.png"
+          />
+          <Friendpic
+            href="https://llsc12.me/"
+            title="llsc"
+            img="https://avatars.githubusercontent.com/u/42747613?v=4"
+          />
+          <Friendpic
+            href="https://github.com/rniii"
+            title="rini"
+            img="https://avatars.githubusercontent.com/u/142252300?v=4"
+          />
+          <Friendpic
+            href="https://vendicated.dev"
+            title="a real veev"
+            img="https://avatars.githubusercontent.com/u/45497981?v=4"
+          />
+          <Friendpic
+            href="https://amy.rip"
+            title="amyulated (jar)"
+            img="https://dp.nea.moe/avatar/603229858612510720.png"
+          />
+          <Friendpic
+            href="https://claration.dev/"
+            title="sammy"
+            img="https://dp.nea.moe/avatar/400482410279469056.png"
+          />
+        </div>
+      </div>
+
+      <hr class="section-seperation" />
+
+      <section class="totd" aria-labelledby="totd-heading">
+        <div class="section-header">
+          <h2 id="totd-heading">TOTD</h2>
+          <p class="section-subheader">Train of the day</p>
+        </div>
+
+        <Totd />
+      </section>
+      <hr class="section-seperation" />
+    </main>
+    <Footer />
+  </body>
+
+  <script>
+    const totdImages = [
+      { src: "/1.JPEG", caption: "Bogie of a BR462 EMU (Siemens Desiro HC)" },
+      { src: "/2.JPEG", caption: "Cab of a BR462 EMU (Siemens Desiro HC)" },
+      {
+        src: "/3.JPEG",
+        caption: "Vennie enjoying the view (Siemens Desiro HC)",
+      },
+      { src: "/4.JPEG", caption: "Does she want to... (Siemens Desiro HC)" },
+      { src: "/5.JPEG", caption: "Moin KHEZ! (Siemens Desiro HC)" },
+      { src: "/6.jpg", caption: "Hamster on Tour 🐹 (Bombadier Talent 2)" },
+      { src: "/7.jpg", caption: "Double power (Bombadier Talent 2)" },
+      {
+        src: "/8.jpg",
+        caption: "Short break absolutely needed (Bombadier Talent 2)",
+      },
+      { src: "/9.jpg", caption: "☀️🌉💧⛪ (Bombardier Talent 2)" },
+      {
+        src: "/10.jpg",
+        caption: "That gotta be a nice office for today (Bombadier Talent 2)",
+      },
+      { src: "/11.JPEG", caption: "I'm ready to pair! (Siemens Desiro HC)" },
+      { src: "/12.JPEG", caption: "Holy night office (Siemens Desiro HC)" },
+      {
+        src: "/13.JPEG",
+        caption: "Stranded 60 minutes in Bergkamen (Siemens Desiro HC)",
+      },
+    ];
+
+    const totdImage = document.getElementById("totd-image");
+    const totdCaption = document.getElementById("totd-caption");
+    const totdDateFormatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Berlin",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
+    function getTotdDateKey(date = new Date()) {
+      const parts = totdDateFormatter.formatToParts(date);
+      const part = (type) => parts.find((item) => item.type === type)?.value;
+      return `${part("year")}-${part("month")}-${part("day")}`;
+    }
+
+    function getTotdIndex(dateKey) {
+      let hash = 2166136261;
+
+      for (const character of dateKey) {
+        hash ^= character.charCodeAt(0);
+        hash = Math.imul(hash, 16777619);
+      }
+
+      return (hash >>> 0) % totdImages.length;
+    }
+
+    function updateTotd() {
+      if (!totdImage || !totdCaption || totdImages.length === 0) return;
+
+      const train = totdImages[getTotdIndex(getTotdDateKey())];
+      totdImage.setAttribute("src", train.src);
+      totdImage.setAttribute("alt", train.caption || "Train of the day");
+      totdCaption.textContent = train.caption || "Train of the day";
+    }
+
+    function getNextTotdChange() {
+      const currentDateKey = getTotdDateKey();
+      let start = Date.now();
+      let end = start + 30 * 60 * 60 * 1000;
+
+      // Find the first millisecond belonging to the next day in Berlin.
+      while (end - start > 1000) {
+        const middle = Math.floor((start + end) / 2);
+        if (getTotdDateKey(new Date(middle)) === currentDateKey) start = middle;
+        else end = middle;
+      }
+
+      return end;
+    }
+
+    function scheduleTotdUpdate() {
+      const delayUntilMidnight = Math.max(
+        1000,
+        getNextTotdChange() - Date.now() + 100,
+      );
+      window.setTimeout(() => {
+        updateTotd();
+        scheduleTotdUpdate();
+      }, delayUntilMidnight);
+    }
+
+    updateTotd();
+    scheduleTotdUpdate();
+
+    const words = [
+      "uncutified",
+      "silly",
+      "a train driver",
+      "buidling great stuff",
+    ];
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    const speed = 100;
+    const eraseSpeed = 80;
+    const delay = 3000;
+
+    function type() {
+      currentWord = words[i];
+
+      if (!isDeleting) {
+        document.getElementById("typing").textContent = currentWord.substring(
+          0,
+          j + 1,
+        );
+        j++;
+        if (j === currentWord.length) {
+          isDeleting = true;
+          setTimeout(type, delay);
+          return;
+        }
+      } else {
+        document.getElementById("typing").textContent = currentWord.substring(
+          0,
+          j - 1,
+        );
+        j--;
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+      }
+      setTimeout(type, isDeleting ? eraseSpeed : speed);
+    }
+
+    type();
+
+    // amy...
+    (function () {
+      const amy = document.querySelector(
+        '.friendpic[href="https://amy.rip"], .friendpic[title="amyulated (jar)"]',
+      );
+
+      if (!amy) {
+        console.warn("Amy not found!");
+        return;
+      }
+
+      amy.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+
+        amy.classList.remove("eighteightpic--spin");
+        void amy.offsetWidth;
+        amy.classList.add("eighteightpic--spin");
+      });
+    })();
+  </script>
+</html>
