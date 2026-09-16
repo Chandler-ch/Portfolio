@@ -12,8 +12,6 @@ interface Props {
   image?: ImageMetadata;
 }
 
-// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
 const { title, description, image = FallbackImage } = Astro.props;
 ---
 
@@ -39,9 +37,6 @@ const { title, description, image = FallbackImage } = Astro.props;
   type="font/woff"
   crossorigin
 />
-
-<!-- Canonical URL -->
-<!-- <link rel="canonical" href={canonicalURL} /> -->
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
