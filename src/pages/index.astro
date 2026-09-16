@@ -4,7 +4,6 @@ import Footer from "../components/seitenlayout/Footer.astro";
 import Header from "../components/seitenlayout/HeaderNav.astro";
 import Summary from "../components/Summary.astro";
 import Projectcard from "../components/Projectcard.astro";
-import Totd from "../components/Totd.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
@@ -17,11 +16,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-  <body>
-    <Header />
-    <main>
+  <Header />
+  <main>
+    <body class="backgroundImage">
       <div class="splash">
-        <div class="splash-content">
+        <div>
           <div class="splash-header">
             <h2>
               Heyy, I'm <span style="color: var(--accent);">Amelia</span>!
@@ -44,13 +43,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
       <hr class="section-seperation" />
 
-      <div class="summary">
-        <div class="section-header">
-          <h2>Summary</h2>
-          <p class="section-subheader">Find out what I love and what I do</p>
-        </div>
-        <Summary />
-      </div>
+      <Summary />
 
       <div class="projects">
         <div class="section-header">
@@ -78,14 +71,27 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       </div>
 
       <hr class="section-seperation" />
-    </main>
-    <Footer />
-  </body>
+      <div class="box">h</div>
+    </body>
+  </main>
+  <Footer />
+
+  <style>
+    .backgroundImage {
+      /* background-image: url("/src/assets/astro.svg");
+      background-size: cover; */
+    }
+    .box {
+      width: 300px;
+      height: 300px;
+      background-image: url("/src/assets/astro.svg");
+    }
+  </style>
 
   <script>
     const words = [
-      "program software!",
-      "be silly!",
+      "program software.",
+      "be silly..",
       "cook meals!",
       "build great stuff!",
     ];
