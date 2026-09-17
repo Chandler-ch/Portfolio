@@ -1,0 +1,17 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import LightDarkMode from "./../LightDarkMode.astro";
+---
+
+<header class="nav">
+  <nav>
+    <div class="navigation">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/contact">Contact</HeaderLink>
+    </div>
+    <div class="settingbuttons">
+      <LightDarkMode />
+    </div>
+  </nav>
+</header>
