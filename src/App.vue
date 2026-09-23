@@ -1,46 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from "./components/Header.vue";
+</script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <!--Picture Dev-->
-    </div>
+  <header class="site-header">
+    <img class="header-image" src="./assets/dev-header2.jpeg" />
   </header>
+  <body></body>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.site-header {
+  width: 100vw;
+  height: 20vh;
+  margin-left: calc(-50vw + 50%);
+  margin-top: calc(-50vw + 50%);
+  overflow: visible;
+  position: relative;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 </style>
