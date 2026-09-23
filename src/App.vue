@@ -4,7 +4,7 @@ import Header from "./components/Header.vue";
 
 <template>
   <header class="site-header">
-    <img class="header-image" src="./assets/dev-header2.jpeg" />
+    <Header></Header>
   </header>
   <body></body>
 </template>
@@ -17,12 +17,5 @@ import Header from "./components/Header.vue";
   margin-top: calc(-50vw + 50%);
   overflow: visible;
   position: relative;
-}
-
-.header-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 </style>

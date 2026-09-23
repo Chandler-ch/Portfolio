@@ -4,9 +4,9 @@
 </template>
 <style scoped>
 .dev-picture {
-  width: 10000px;
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* Schneidet das Bild passend zu */
-  object-position: center; /* Bestimmt den Fokuspunkt (z.B. top, bottom, center)*/
+  object-fit: cover;
+  object-position: center;
 }
 </style>
