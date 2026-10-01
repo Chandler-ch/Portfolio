@@ -9,19 +9,22 @@ const props = defineProps<{
 const sleep = (ms: number) =>
   new Promise<void>((resolve) => setTimeout(resolve, ms));
 
-const waitingTime = 200;
+const waitingTime = 150;
 
 const displayText: Ref<string> = ref("");
 
-onMounted(async () => await hurensohn());
+onMounted(async () => {
+  while (props.possibleEndings.length > 0) {
+    await textAnimation();
+  }
+});
 
-async function hurensohn() {
+async function textAnimation() {
   for (
     let wordIndex = 0;
     wordIndex < props.possibleEndings.length;
     wordIndex++
   ) {
-    if (props.possibleEndings[wordIndex] == undefined) break;
     const currentWord: string = props.possibleEndings[wordIndex];
 
     for (let letterIndex = 0; letterIndex < currentWord.length; letterIndex++) {
@@ -33,7 +36,6 @@ async function hurensohn() {
       );
     }
     await sleep(10 * waitingTime);
-    // loop through letters function
     for (
       let letterIndex = displayText.value.length;
       letterIndex > 0;
@@ -41,6 +43,7 @@ async function hurensohn() {
     ) {
       displayText.value = await removeCharSlowlyFromString(displayText.value);
     }
+    await sleep(5 * waitingTime);
   }
 }
 // composable -- gibt ein neues wort zurück durch kombi char & string -- ev slowly und sonst nicht
@@ -56,7 +59,7 @@ async function removeCharSlowlyFromString(word: string) {
 </script>
 <template>
   <div>
-    <span class="subtitle">{{ beforeAnimation }}</span>
+    <span class="subtitle">{{ beforeAnimation + " " }} </span>
     <span class="subtitle animated">{{ displayText }}</span>
   </div>
 </template>
@@ -66,5 +69,19 @@ async function removeCharSlowlyFromString(word: string) {
 }
 .animated {
   color: pink;
+}
+.animated::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 </style>
