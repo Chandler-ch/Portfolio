@@ -46,7 +46,6 @@ async function textAnimation() {
     await sleep(5 * waitingTime);
   }
 }
-// composable -- gibt ein neues wort zurück durch kombi char & string -- ev slowly und sonst nicht
 async function addCharSlowlyToString(character: string, word: string) {
   await sleep(waitingTime);
   return word + character;
