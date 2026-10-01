@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Suspense } from "vue";
 import AnimatedText from "./components/AnimatedText.vue";
 import Header from "./components/Header.vue";
 import Title from "./components/Title.vue";
@@ -11,17 +12,8 @@ import Title from "./components/Title.vue";
       <Title content="Amelia Chandler" />
       <AnimatedText
         beforeAnimation="21 year old ISFJ who likes to "
-        :possibleText="[
-          'build Software',
-          'learn Kotlin',
-          'cook meals',
-          'program Websites',
-          'cut videos',
-          'edit pictures in photoshop',
-          'sort everything',
-          'document modules',
-        ]"
-      />
+        :possibleEndings="['abc']"
+      ></AnimatedText>
     </div>
   </body>
 </template>
@@ -36,3 +28,12 @@ import Title from "./components/Title.vue";
   align-items: row;
 }
 </style>
+
+<!-- 'build Software',
+          'learn Kotlin',
+          'cook meals',
+          'program Websites',
+          'cut videos',
+          'edit pictures in photoshop',
+          'sort everything',
+          'document modules', -->
