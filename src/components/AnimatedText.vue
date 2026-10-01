@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from "vue";
-import { useTimeout } from "@vueuse/core";
 
 const props = defineProps<{
   beforeAnimation: string;
@@ -9,6 +8,8 @@ const props = defineProps<{
 
 const sleep = (ms: number) =>
   new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+const waitingTime = 200;
 
 const displayText: Ref<string> = ref("");
 
@@ -26,26 +27,44 @@ async function hurensohn() {
     for (let letterIndex = 0; letterIndex < currentWord.length; letterIndex++) {
       const currentLetter: string = currentWord[letterIndex];
 
-      await addCharSlowlyToString(currentLetter, currentWord);
+      displayText.value = await addCharSlowlyToString(
+        currentLetter,
+        displayText.value,
+      );
+    }
+    await sleep(10 * waitingTime);
+    // loop through letters function
+    for (
+      let letterIndex = displayText.value.length;
+      letterIndex > 0;
+      letterIndex--
+    ) {
+      displayText.value = await removeCharSlowlyFromString(displayText.value);
     }
   }
 }
 // composable -- gibt ein neues wort zurück durch kombi char & string -- ev slowly und sonst nicht
 async function addCharSlowlyToString(character: string, word: string) {
-  if (character.length !== 1) return;
-  displayText.value = word + character;
-  await sleep(1000);
-  console.log(word + character);
+  await sleep(waitingTime);
+  return word + character;
+}
+
+async function removeCharSlowlyFromString(word: string) {
+  await sleep(0.5 * waitingTime);
+  return word.slice(0, -1);
 }
 </script>
 <template>
   <div>
-    <span class="title">{{ beforeAnimation }}</span>
-    <span class="title">{{ displayText }}</span>
+    <span class="subtitle">{{ beforeAnimation }}</span>
+    <span class="subtitle animated">{{ displayText }}</span>
   </div>
 </template>
 <style scoped>
-.title {
+.subtitle {
   font-size: 2vw;
+}
+.animated {
+  color: pink;
 }
 </style>
