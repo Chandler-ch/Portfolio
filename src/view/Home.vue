@@ -7,7 +7,7 @@ import Title from "@/components/Title.vue";
 <template>
   <body>
     <div class="main-container">
-      <div class="side-container">
+      <div class="left-container">
         <Title content="Amelia Chandler" />
         <AnimatedText
           beforeAnimation="21 year old ISFJ who likes to"
@@ -23,7 +23,9 @@ import Title from "@/components/Title.vue";
           ]"
         ></AnimatedText>
       </div>
-      <Portrait />
+      <div class="right-container">
+        <Portrait />
+      </div>
     </div>
   </body>
 </template>
@@ -33,8 +35,11 @@ import Title from "@/components/Title.vue";
   display: flex;
   justify-content: space-between;
 }
-.side-container {
+.left-container {
   margin-left: 5vb;
   margin-top: 3vb;
+}
+.right-container {
+  margin-right: 10vb;
 }
 </style>
