@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <header class="container">
-    <img class="dev-picture" src="./../assets/dev-header.jpeg" />
+    <img class="dev-picture" src="/dev-header.jpeg" />
   </header>
 </template>
 <style scoped>
