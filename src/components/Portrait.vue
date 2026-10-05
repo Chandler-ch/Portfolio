@@ -1,6 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  path: string;
+}>();
+</script>
 <template>
-  <img class="picture" src="../assets/Bewerbungsbild.jpg" />
+  <div>{{ props.path }}</div>
+  <img class="picture" :src="props.path" />
 </template>
 <style scoped>
 .picture {
