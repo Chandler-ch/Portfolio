@@ -24,7 +24,7 @@ import Title from "@/components/Title.vue";
         ></AnimatedText>
       </div>
       <div class="right-container">
-        <Portrait />
+        <Portrait path="/Bewerbungsbild.jpg" />
       </div>
     </div>
   </body>
