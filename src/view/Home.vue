@@ -36,7 +36,5 @@ import Title from "@/components/Title.vue";
 .side-container {
   margin-left: 5vb;
   margin-top: 3vb;
-  display: grid;
-  align-items: row;
 }
 </style>
