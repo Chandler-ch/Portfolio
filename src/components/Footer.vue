@@ -1,20 +1,16 @@
 <script setup lang="ts"></script>
 <template>
-  <h2>hey</h2>
+  <div class="container"></div>
 </template>
 <style scoped>
 .container {
-  width: 100vw;
-  height: 20vh;
+  margin-top: 30vb;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  height: 50vb;
+  background-color: gray;
   margin-left: calc(-50vw + 50%);
-  margin-top: calc(-50vw + 50%);
-  overflow: visible;
-  position: relative;
-}
-.dev-picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: calc(-50vw + 50%);
 }
 </style>
