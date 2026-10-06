@@ -10,8 +10,6 @@
   height: 20vh;
   margin-left: calc(-50vw + 50%);
   margin-top: calc(-50vw + 50%);
-  overflow: visible;
-  position: relative;
 }
 .dev-picture {
   width: 100%;
