@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AnimatedText from "@/components/AnimatedText.vue";
+import ExperienceBlock from "@/components/ExperienceBlock.vue";
 import Portrait from "@/components/Portrait.vue";
 import Title from "@/components/Title.vue";
 </script>
@@ -22,6 +23,7 @@ import Title from "@/components/Title.vue";
             'document modules',
           ]"
         ></AnimatedText>
+        <ExperienceBlock />
       </div>
       <div class="right-container">
         <Portrait :height="40" path="/Bewerbungsbild.jpg" />
