@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{}>();
+const props = defineProps<{
+  content: string;
+}>();
 </script>
 <template>
   <div class="block">
-    <span class="text">test</span>
+    <span class="text">{{ content }}</span>
   </div>
 </template>
 <style scoped>
@@ -12,7 +14,7 @@ const props = defineProps<{}>();
 }
 .block {
   border: 2px black solid;
-  border-radius: 10%;
+  border-radius: 16px;
 
   display: flex;
 }
