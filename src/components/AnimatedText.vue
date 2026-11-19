@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from "vue";
+import SubText from "./SubText.vue";
 
 const props = defineProps<{
   beforeAnimation: string;
@@ -58,8 +59,8 @@ async function removeCharSlowlyFromString(word: string) {
 </script>
 <template>
   <div>
-    <span class="subtitle">{{ beforeAnimation + " " }} </span>
-    <span class="subtitle animated">{{ displayText }}</span>
+    <SubText size="medium" :content="beforeAnimation + ' '"> </SubText>
+    <SubText class="animated" size="medium" :content="displayText"> </SubText>
   </div>
 </template>
 <style scoped>

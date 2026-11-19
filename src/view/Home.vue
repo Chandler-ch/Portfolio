@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AnimatedText from "@/components/AnimatedText.vue";
+import ExperienceBlock from "@/components/ExperienceBlock.vue";
 import Portrait from "@/components/Portrait.vue";
 import Title from "@/components/Title.vue";
 </script>
@@ -10,6 +11,7 @@ import Title from "@/components/Title.vue";
       <div class="left-container">
         <Title content="Amelia Chandler" />
         <AnimatedText
+          class="spacing"
           beforeAnimation="21 year old ISFJ who likes to"
           :possibleEndings="[
             'build Software',
@@ -22,6 +24,10 @@ import Title from "@/components/Title.vue";
             'document modules',
           ]"
         ></AnimatedText>
+        <ExperienceBlock
+          title="Erfahrungen"
+          content="Ich habe dies und das gemacht.. ausserdem in Kotlin einen Taschenrechner programmiert. Ansonsten kreire ich viel mit Vue.js und Typescript."
+        />
       </div>
       <div class="right-container">
         <Portrait :height="40" path="/Bewerbungsbild.jpg" />
@@ -41,5 +47,8 @@ import Title from "@/components/Title.vue";
 }
 .right-container {
   margin-right: 10vb;
+}
+.spacing {
+  margin-bottom: 5vb;
 }
 </style>
