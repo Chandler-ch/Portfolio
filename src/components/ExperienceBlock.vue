@@ -7,15 +7,12 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <span class="title">{{ title }}</span>
+  <SubText :content="title" size="medium"></SubText>
   <div class="block">
     <SubText :content="content" size="small" class="text"></SubText>
   </div>
 </template>
 <style scoped>
-.title {
-  font-size: xx-large;
-}
 .text {
   margin: 1vb;
 }

@@ -11,6 +11,7 @@ import Title from "@/components/Title.vue";
       <div class="left-container">
         <Title content="Amelia Chandler" />
         <AnimatedText
+          class="spacing"
           beforeAnimation="21 year old ISFJ who likes to"
           :possibleEndings="[
             'build Software',
@@ -46,5 +47,8 @@ import Title from "@/components/Title.vue";
 }
 .right-container {
   margin-right: 10vb;
+}
+.spacing {
+  margin-bottom: 5vb;
 }
 </style>
