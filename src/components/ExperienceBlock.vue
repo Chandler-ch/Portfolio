@@ -9,7 +9,7 @@ const props = defineProps<{
 <template>
   <SubText :content="title" size="medium"></SubText>
   <div class="block">
-    <SubText :content="content" size="small" class="text"></SubText>
+    <SubText :content="content" class="text"></SubText>
   </div>
 </template>
 <style scoped>

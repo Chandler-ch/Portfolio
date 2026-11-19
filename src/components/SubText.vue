@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-const props = defineProps<{
-  content: string;
-  size: "big" | "medium" | "small";
-}>();
+const props = withDefaults(
+  defineProps<{
+    content: string;
+    size?: "big" | "medium" | "small";
+  }>(),
+  {
+    size: "small",
+  },
+);
 
 const fontSize = ref(0);
 
