@@ -23,7 +23,10 @@ import Title from "@/components/Title.vue";
             'document modules',
           ]"
         ></AnimatedText>
-        <ExperienceBlock />
+        <ExperienceBlock
+          title="Erfahrungen"
+          content="Ich habe dies und das gemacht.. ausserdem in Kotlin einen Taschenrechner programmiert. Ansonsten kreire ich viel mit Vue.js und Typescript."
+        />
       </div>
       <div class="right-container">
         <Portrait :height="40" path="/Bewerbungsbild.jpg" />

@@ -1,14 +1,21 @@
 <script setup lang="ts">
+import SubText from "./SubText.vue";
+
 const props = defineProps<{
+  title: string;
   content: string;
 }>();
 </script>
 <template>
+  <span class="title">{{ title }}</span>
   <div class="block">
-    <span class="text">{{ content }}</span>
+    <SubText :content="content" size="small" class="text"></SubText>
   </div>
 </template>
 <style scoped>
+.title {
+  font-size: xx-large;
+}
 .text {
   margin: 1vb;
 }
