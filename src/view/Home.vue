@@ -2,6 +2,7 @@
 import AnimatedText from "@/components/AnimatedText.vue";
 import ExperienceBlock from "@/components/ExperienceBlock.vue";
 import Portrait from "@/components/Portrait.vue";
+import Picture from "@/components/Picture.vue";
 import Title from "@/components/Title.vue";
 </script>
 
@@ -31,6 +32,7 @@ import Title from "@/components/Title.vue";
       </div>
       <div class="right-container">
         <Portrait :height="40" path="/Bewerbungsbild.jpg" />
+        <Picture :height="80" path="/timeline.jpg" />
       </div>
     </div>
   </body>
@@ -46,7 +48,10 @@ import Title from "@/components/Title.vue";
   margin-top: 3vb;
 }
 .right-container {
+  display: flex;
+  flex-direction: column;
   margin-right: 10vb;
+  align-items: center;
 }
 .spacing {
   margin-bottom: 5vb;
